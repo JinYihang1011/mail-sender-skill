@@ -1,0 +1,19 @@
+{
+  "smtp_host": "YOUR_SMTP_HOST",
+  "smtp_port": 465,
+  "transport": "ssl",
+  "username": "YOUR_SMTP_USERNAME",
+  "sender": "YOUR_SENDER_ADDRESS",
+  "display_name": "Mail Reminder",
+  "default_to": "",
+  "signature": "",
+  "password_env": "MAIL_SENDER_PASSWORD",
+  "state_path": "./mail-state.sqlite3",
+  "limits": {
+    "min_interval_seconds": 600,
+    "max_per_hour": 6,
+    "max_per_day": 30,
+    "dedupe_hours": 24,
+    "cooldown_minutes": 30
+  }
+}
