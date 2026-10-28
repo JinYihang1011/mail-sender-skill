@@ -2,13 +2,19 @@
 
 一个可供支持 `SKILL.md` 的 AI 助手使用的 SMTP 邮件发送 Skill。它提供命令行发送器、可填写的配置模板，以及跨进程共享的限频记录。仅依赖 Python 标准库。
 
-## 给 AI 助手的快速入口
+## 给 AI 助手的导入提示词
 
-1. 导入本目录作为 `mail-sender` Skill，先阅读 [SKILL.md](SKILL.md)。
-2. 引导用户在仓库外复制并填写 [config.example.json](config.example.json)。不要在聊天中索取密码或授权码，也不要把它写入仓库。
-3. 请用户在运行环境中设置配置项 `password_env` 指定的环境变量。
-4. 确认用户指定的收件人、主题和正文，先运行 `--dry-run`；获得发送授权后才实际发送。
-5. 检查 JSON 结果。`sent` 表示 SMTP 服务器接受，不能保证收件箱已收到；`blocked` 是限频，`error` 是失败或结果不确定。
+复制下面的提示词，发送给支持安装文件系统 Skill 的 AI 助手：
+
+```text
+请帮我安装 Mail Sender Skill：
+
+1. 从 https://github.com/JinYihang1011/mail-sender-skill 克隆仓库，阅读 SKILL.md 和 README.md，按当前 AI 应用的 Skill 安装方式安装整个 Skill。使用 Codex 时，安装到用户级的 ~/.codex/skills/mail-sender；不要把 .git 目录或私有配置复制进 Skill 目录。
+2. 如果目标位置已有同名 Skill，先检查现有内容，避免覆盖用户已有的修改；如有冲突，请向我说明并询问如何处理。安装后检查 SKILL.md 和 scripts/send_mail.py 是否存在，并告诉我是否需要重启或重新加载应用才能识别。
+3. 如果我要配置发信，请引导我把 config.example.json 复制到 Skill 和仓库之外的私有目录，并按所用邮箱服务商填写配置。QQ 邮箱可参考 README 中的别名自发邮件示例。授权码由我自己在运行环境中设置为 password_env 指定的环境变量；不要在聊天中索取、显示或保存密码和授权码。
+4. 安装或配置期间不要发送测试邮件，也不要创建定时任务，除非我另行授权。需要验证配置时可先使用 --dry-run，并说明它不会连接 SMTP，也不能验证授权码或实际投递。
+5. 遇到权限、网络或应用兼容性限制时，请说明已完成的步骤和我需要采取的操作，不要声称安装或验证已经成功。
+```
 
 ## 导入 Skill
 
