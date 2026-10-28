@@ -39,7 +39,7 @@ Copy-Item -Recurse -LiteralPath '<克隆目录>' -Destination "$env:USERPROFILE\
 
 这个示例使用已在 QQ 邮箱中开通的地址作为发件别名，收件地址填写自己的 QQ 邮箱。示例地址均为占位符；请替换为自己实际拥有的地址，不要直接使用示例地址。
 
-1. 登录 [QQ 邮箱](https://mail.qq.com/)，确认所用别名已经开通，并在设置中找到 IMAP/SMTP 服务，按页面提示开启服务并生成**授权码**。授权码不是 QQ 登录密码，具体入口和验证方式以 QQ 邮箱页面为准。可参考[获取授权码的说明](https://support.huaweicloud.com/usermanual-roma/roma_03_5025.html)。
+1. 登录 [QQ 邮箱](https://mail.qq.com/)，确认所用别名已经开通，并在设置中找到 IMAP/SMTP 服务，按页面提示开启服务并生成**授权码**。授权码不是 QQ 登录密码，具体入口和验证方式以 QQ 邮箱页面为准。可参考 [QQ 邮箱官方授权码说明](https://help.mail.qq.com/detail/106/985)。
 2. 将 `config.example.json` 复制到仓库外的私有目录，例如 `C:\MailSenderPrivate\config.json`。在副本中保留其他字段及 `limits`，将下列字段替换为自己的值：
 
    ```json
